@@ -1,0 +1,30 @@
+- name: Set editor
+  git_config:
+    name: core.editor
+    scope: global
+    value: vim
+
+- name: Config name
+  git_config:
+    name: 'user.name'
+    scope: global
+    value: 'Sergey Kluchkovsky'
+
+- name: Config email
+  git_config:
+    name: user.email
+    scope: global
+    value: kaineer@gmail.com
+
+- name: Alias commit
+  git_config:
+    name: alias.ci
+    scope: global
+    value: commit
+
+- name: Alias status
+  git_config:
+    name: alias.st
+    scope: global
+    value: status
+

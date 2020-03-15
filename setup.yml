@@ -1,0 +1,8 @@
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - name: Install packages
+      include: install-packages.yml
+    - name: Setup git
+      include: setup-git.yml
+

@@ -1,0 +1,12 @@
+- name: Install git
+  apt:
+    name: git
+    state: present
+- name: Install neovim
+  apt:
+    name: neovim
+    state: present
+- name: Install tmux
+  apt:
+    name: tmux
+    state: present
