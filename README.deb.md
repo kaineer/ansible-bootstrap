@@ -17,7 +17,7 @@ $ git clone git@github.com:kaineer/ansible-bootstrap.git ~/git/ansible-bootstrap
 
 ```
 cd ~/git/ansible-playbook
-$ ansible-playbook --ask-sudo-password setup.yml
+$ ansible-playbook --ask-sudo-pass setup.yml
 ```
 
 4. That is all
