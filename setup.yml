@@ -3,6 +3,8 @@
   tasks:
     - name: Install packages
       include: install-packages.yml
+- hosts: localhost
+  sudo: no
+  tasks:
     - name: Setup git
       include: setup-git.yml
-
