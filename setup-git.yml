@@ -16,7 +16,11 @@
 # regardless of the setting of this variable. A simple space character is not considered 
 # "unusual". Many commands can output pathnames completely verbatim using the -z option. 
 # The default value is true.
-    - { name: 'quotepath', value: false }
+#
+# NOTE: value is set as string, because when we use boolean
+#   ansible sets value as 'False'. And I'm not sure, whether
+#   git will interpret 'False' as it should be interpreted.
+    - { name: 'quotepath', value: 'false' }
 
 - name: Setup commit configuration
   git_config:
