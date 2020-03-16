@@ -1,9 +1,10 @@
-- name: Set editor
+- name: Setup core
   git_config:
-    name: core.editor
+    name: "core.{{ item.name }}"
     scope: global
-    value: vim
-
+    value: "{{ item.value }}"
+  loop:
+    - { name: 'editor', value: 'vim' }
 # link: https://git-scm.com/docs/git-config#Documentation/git-config.txt-corequotePath
 #
 # Commands that output paths (e.g. ls-files, diff), will quote "unusual" characters in the 
@@ -15,44 +16,24 @@
 # regardless of the setting of this variable. A simple space character is not considered 
 # "unusual". Many commands can output pathnames completely verbatim using the -z option. 
 # The default value is true.
-- name: Set quotepath
-  git_config:
-    name: core.quotepath
-    scope: global
-    value: false
+    - { name: 'quotepath', value: false }
 
-- name: Config name
+- name: Setup commit configuration
   git_config:
-    name: 'user.name'
+    name: "config.{{ item.name }}"
     scope: global
-    value: 'Sergey Kluchkovsky'
+    value: "{{ item.value }}"
+  loop:
+    - { name: 'name', value: 'Sergey Kluchkovsky' }
+    - { name: 'email', value: 'kaineer@gmail.com' }
 
-- name: Config email
+- name: Setup aliases
   git_config:
-    name: user.email
+    name: "alias.{{ item.name }}"
     scope: global
-    value: kaineer@gmail.com
-
-- name: Alias commit
-  git_config:
-    name: alias.ci
-    scope: global
-    value: commit
-
-- name: Alias status
-  git_config:
-    name: alias.st
-    scope: global
-    value: status
-
-- name: Alias checkout
-  git_config:
-    name: alias.co
-    scope: global
-    value: checkout
-
-- name: Alias log
-  git_config:
-    name: alias.lg
-    scope: global
-    value: 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+    value: "{{ item.value }}"
+  loop:
+    - { name: 'ci', value: 'commit' }
+    - { name: 'co', value: 'checkout' }
+    - { name: 'st', value: 'status' }
+    - { name: 'lg', value: 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short' }
