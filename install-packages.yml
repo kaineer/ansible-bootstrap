@@ -1,7 +1,7 @@
 - name: "Install {{ item.name }}"
   apt:
     name: "{{ item.name }}"
-    status: present
+    state: present
   loop:
     - { name: git }
     - { name: tmux }
