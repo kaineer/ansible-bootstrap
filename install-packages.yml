@@ -1,8 +1,7 @@
-- name: Install neovim
+- name: "Install {{ item.name }}"
   apt:
-    name: neovim
-    state: present
-- name: Install tmux
-  apt:
-    name: tmux
-    state: present
+    name: "{{ item.name }}"
+    status: present
+  loop:
+    - { name: git }
+    - { name: tmux }
