@@ -1,10 +1,12 @@
 - hosts: localhost
-  sudo: yes
+  become: yes
+  become_user: root
+  become_method: sudo
   tasks:
     - name: Install packages
       include: install-packages.yml
 - hosts: localhost
-  sudo: no
+  become: no
   tasks:
     - name: Setup git
       include: setup-git.yml
