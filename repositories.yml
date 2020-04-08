@@ -1,7 +1,0 @@
-- name: Configuration repositories
-  git:
-    repo: "{{ item.repo }}"
-    dest: "~/git/{{ item.dest }}"
-  loop:
-    - { repo: git@github.com:kaineer/tmux-config.git, dest: 'tmux-config' }
-    # - { repo: git@github.com:kaineer/emacs-config.git, dest: 'emacs-config' }

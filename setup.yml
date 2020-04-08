@@ -10,3 +10,4 @@
   tasks:
     - name: Setup git
       include: setup-git.yml
+    - include: config-repositories.yml
