@@ -9,5 +9,5 @@
   blockinfile:
     path: "~/.tmux.conf"
     block: |
-      TMUX_CFG=~/git/config/tmux
+      TMUX_CFG={{ lookup('env', 'HOME') }}/git/config/tmux
       source $TMUX_CFG/config.conf
