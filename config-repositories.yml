@@ -5,3 +5,9 @@
   loop:
     - { repo: 'git@github.com:kaineer/tmux-config.git', dest: 'tmux' }
     # - { repo: 'git@github.com:kaineer/emacs-config.git', dest: 'emacs' }
+- name: Setup config pointers
+  blockinfile:
+    path: "~/.tmux.conf"
+    block: |
+      TMUX_CFG=~/git/config/tmux
+      source $TMUX_CFG/config.conf
