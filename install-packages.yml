@@ -6,3 +6,5 @@
     - { name: git }
     - { name: tmux }
     - { name: jq }
+    - { name: rustc }
+    - { name: cargo }
