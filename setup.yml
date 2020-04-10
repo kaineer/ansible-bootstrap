@@ -14,4 +14,4 @@
       git:
         repo: "git@gitlab.com:kaineer/kaineer.git"
         dest: "~/git/kaineer"
-        submodules: yes
+        recursive: yes
