@@ -10,4 +10,8 @@
   tasks:
     - name: Setup git
       include: setup-git.yml
-    - include: config-repositories.yml
+    - name: Clone assets repository
+      git:
+        repo: "git@gitlab.com:kaineer/kaineer.git"
+        dest: "~/git/kaineer"
+        submodules: yes
