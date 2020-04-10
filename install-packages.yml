@@ -5,3 +5,4 @@
   loop:
     - { name: git }
     - { name: tmux }
+    - { name: jq }
