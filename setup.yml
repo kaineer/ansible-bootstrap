@@ -10,3 +10,5 @@
   tasks:
     - name: Setup git
       include: packages/git.yml
+    - name: Setup neovim
+      include: packages/nvim.yml
