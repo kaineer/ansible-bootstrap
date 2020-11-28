@@ -6,6 +6,10 @@
   git:
     repo: https://github.com/kaineer/nvim-config.git
     dest: "{{ lookup('env', 'HOME') }}/git/config/nvim"
+- name: Create directory for link
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.config/nvim"
+    state: directory
 - name: Link vim config into settings repository
   blockinfile:
     path: "{{ lookup('env', 'HOME') }}/.config/nvim/init.vim"
