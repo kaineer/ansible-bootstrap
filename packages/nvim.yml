@@ -1,14 +1,14 @@
 - name: Setup vim-plug
   get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    dest: {{ lookup('env', 'HOME') }}/.config/nvim/autoload/plug.nvim
+    dest: "{{ lookup('env', 'HOME') }}/.config/nvim/autoload/plug.nvim"
 - name: Clone settings repository
   git:
     repo: https://github.com/kaineer/nvim-config.git
-    dest: {{ lookup('env', 'HOME') }}/git/config/nvim
+    dest: "{{ lookup('env', 'HOME') }}/git/config/nvim"
 - name: Link vim config into settings repository
   blockinfile:
-    path: {{ lookup('env', 'HOME') }}/.config/nvim/init.vim
+    path: "{{ lookup('env', 'HOME') }}/.config/nvim/init.vim"
     block: |
       "
       source ~/git/config/nvim/init.vim
