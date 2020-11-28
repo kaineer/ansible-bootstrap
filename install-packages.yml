@@ -5,7 +5,7 @@
   loop:
     - { name: git }
     - { name: tmux }
-    - { name: nvim }
+    - { name: neovim }
     - { name: jq }
     - { name: rustc }
     - { name: cargo }
