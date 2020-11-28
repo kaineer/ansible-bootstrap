@@ -1,6 +1,6 @@
 - name: Create directory for vim-plug
   file:
-    path: "{{ lookup('env', 'HOME')/.local/share/nvim/site/autoload"
+    path: "{{ lookup('env', 'HOME') }}/.local/share/nvim/site/autoload"
     state: directory
 - name: Setup vim-plug
   get_url:
@@ -18,6 +18,6 @@
     state: directory
 
 - name: Copy link
-  file:
+  copy:
     src: "{{ lookup('env', 'HOME') }}/git/ansible-bootstrap/files/init.vim"
     dest: "{{ lookup('env', 'HOME') }}/.config/nvim/init.vim"
