@@ -21,3 +21,14 @@
   copy:
     src: "{{ lookup('env', 'HOME') }}/git/ansible-bootstrap/files/init.vim"
     dest: "{{ lookup('env', 'HOME') }}/.config/nvim/init.vim"
+
+- name: Copy wakatime key
+  copy:
+    src: "{{ lookup('env', 'HOME') }}/git/ansible-bootstrap/files/.wakatime.cfg"
+    dest: "{{ lookup('env', 'HOME') }}/.wakatime.cfg"
+
+- name: Copy vim gist token
+  copy:
+    src: "{{ lookup('env', 'HOME') }}/git/ansible-bootstrap/files/.gist-vim"
+    dest: "{{ lookup('env', 'HOME') }}/.gist-vim"
+
