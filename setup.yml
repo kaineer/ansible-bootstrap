@@ -9,9 +9,4 @@
   become: no
   tasks:
     - name: Setup git
-      include: setup-git.yml
-    - name: Clone assets repository
-      git:
-        repo: "git@gitlab.com:kaineer/kaineer.git"
-        dest: "~/git/kaineer"
-        recursive: yes
+      include: packages/git.yml
