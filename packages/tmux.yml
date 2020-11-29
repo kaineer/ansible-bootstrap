@@ -1,0 +1,9 @@
+- name: Clone settings repository
+  git:
+    repo: https://github.com/kaineer/tmux-config.git
+    dest: "{{ lookup('env', 'HOME') }}/git/config/tmux"
+
+- name: Copy link
+  copy:
+    src: "{{ lookup('env', 'HOME') }}/git/ansible-bootstrap/files/.tmux.conf"
+    dest: "{{ lookup('env', 'HOME') }}/.tmux.conf"

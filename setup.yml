@@ -12,3 +12,7 @@
       include: packages/git.yml
     - name: Setup neovim
       include: packages/nvim.yml
+    - name: Setup tmux
+      include: packages/tmux.yml
+    - name: Setup node
+      include: packages/node.yml

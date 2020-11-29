@@ -1,0 +1,18 @@
+- name: Install node version manager
+  git:
+    repo: https://github.com/creationix/nvm.git
+    dest: ~/.nvm
+
+- name: Source nvm in ~/.{{ item }}
+  lineinfile: >
+    dest=~/.{{ item }}
+    line="source ~/.nvm/nvm.sh"
+    create=yes
+  with_items:
+    - bashrc
+    - zshrc
+    - profile
+
+- name: Install node and set version
+  shell: "nvm install stable"
+
