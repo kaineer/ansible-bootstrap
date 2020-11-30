@@ -14,4 +14,4 @@
     - profile
 
 - name: Install node and set version
-  shell: "sh -c 'nvm install stable'"
+  shell: "sh -c '. ~/.nvm/nvm.sh && nvm install stable'"
